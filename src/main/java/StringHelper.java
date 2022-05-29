@@ -10,7 +10,7 @@ public class StringHelper {
         String first2Chars = str.substring(0, 2);
         String stringMinusFirst2Chars = str.substring(2);
 
-        return first2Chars.replaceAll("A", " ")
+        return first2Chars.replaceAll("A", "")
                 + stringMinusFirst2Chars;
     }
 
