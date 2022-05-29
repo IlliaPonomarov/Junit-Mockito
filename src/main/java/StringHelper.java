@@ -2,6 +2,7 @@ public class StringHelper {
 
 
 
+    //AACD => CD, ACD => CD , CDEF => CDEF, CDAA => CDAA
     public String truncateAInFirst2Positions(String str){
         if (str.length() <= 2)
             return str.replaceAll("A", " ");
