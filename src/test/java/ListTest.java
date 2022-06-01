@@ -38,7 +38,10 @@ public class ListTest {
     public void letsMockListSizeMethod(){
         //Given
         List listMock = mock(List.class);
+
         when(listMock.size()).thenReturn(2);
+
+        assertEquals(2, listMock.size());
 
         //When - actual method call.
 

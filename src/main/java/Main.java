@@ -1,57 +1,116 @@
+import org.w3c.dom.ls.LSOutput;
+
 public class Main {
 
 
-}
-interface Y {
-    void a();
-}
-abstract class J implements Y {
-    public void a() {
-        System.out.print("J");
-    }
-}
-class K extends J {
-    public void a(int i) {
-        System.out.print("K");
-    }
-}
-class L extends K {
-    public void a() {
-        super.a();
-        System.out.print("L");
-    }
-}
-class A {
-    static void s() {
-        Y o1 = new L();
-        L o2 = new L();
-        K o3 = new K();
-        J o4 = new K();
-        J o5 = new L();
-        o1.a();
-        o2.a();
-        ((J)o3).a();
-        o4.a();
-        ((L)o5).a();
-    }
-}
-class B extends A {
-    static void s() {
-        Y o1 = new L();
-        K o2 = new K();
-        Y o3 = new K();
-        J o4 = new K();
-        L o5 = new L();
-        o1.a();
-        ((J)o2).a();
-        o3.a();
-        ((K)o4).a();
-        o5.a();
-    }
-}
-class M {
+
     public static void main(String[] args) {
-        A o = new B();
-        o.s();
+
+
+
+
+
+
+    }
+
+}
+//class E extends Exception {}
+//class M {
+//    public void c(char c) throws E {
+//        if (c == 'a')
+//        System.out.print("A");
+//else
+//        throw new E();
+//    }
+//    public void m(char c) {
+//        System.out.print("M");
+//        try {
+//            c(c);
+//        } catch (E e) {
+//            System.out.print("E");
+//        } finally {
+//            System.out.print("F");
+//        }
+//    }
+//    public static void main(String[] args) {
+//        new M().m('a');
+//        new M().m('b');
+//        new M().m('a');
+//    }
+//}
+
+
+class E extends Exception {}
+class M {
+    public void m(char c) throws E {
+        if (c == 'a')
+        System.out.print("A");
+else
+        throw new E();
+    }
+    public void p(char c) throws E {
+        System.out.print("F");
+        try {
+            m(c);
+        } catch (E e) {
+            System.out.print("T");
+            throw e;
+        } finally {
+            System.out.print("E");
+        }
+    }
+    public static void main(String[] args) throws E {
+        new M().p('b');
+        new M().p('a');
     }
 }
+//class A {
+//    public void x() {
+//        System.out.print("Ax");
+//    }
+//    public static void y() {
+//        System.out.print("Ay");
+//    }
+//}
+//class B extends A {
+//    public void x() {
+//        super.x();
+//        System.out.print("Bx");
+//    }
+//    public static void y() {
+//        A.y();
+//        System.out.print("By");
+//    }
+//}
+//class C extends B {
+//    public void x() {
+//        System.out.print("Cx");
+//    }
+//    public static void y() {
+//        System.out.print("Cy");
+//    }
+//}
+//class M {
+//    public static void main(String[] args) {
+//        A o1 = new B();
+//        C o2 = new C();
+//        A o3 = new A();
+//        B o4 = new B();
+//        B o5 = new C();
+//        ((B) o1).x();
+//        ((B) o1).y();
+//        System.out.print(" ");
+//        ((A) o2).x();
+//        ((A) o2).y();
+//
+//        System.out.print(" ");
+//        o3.x();
+//        o3.y();
+//        System.out.print(" ");
+//        o4.x();
+//        o4.y();
+//        System.out.print(" ");
+//        ((A) o5).x();
+//        ((A) o5).y();
+//    }
+//}
