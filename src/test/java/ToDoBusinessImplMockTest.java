@@ -64,24 +64,6 @@ public class ToDoBusinessImplMockTest {
 
         //Then
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         then(todoServiceMock).should(atLeastOnce()).deleteTodo("Learn to Dance");
         verify(todoServiceMock, atLeastOnce()).deleteTodo("Learn to Dance");
         verify(todoServiceMock, never()).deleteTodo("Learn Spring MVC");

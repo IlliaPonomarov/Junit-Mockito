@@ -1,6 +1,12 @@
 package Mockito;
 
-public class Calculates {
+public class Calculates{
+
+    private BasicCalucalte basicCalucalte;
+
+    public Calculates(BasicCalucalte basicCalucalte) {
+        this.basicCalucalte = basicCalucalte;
+    }
 
     public int moduleTestBy2(int number){
 
@@ -9,5 +15,11 @@ public class Calculates {
 
         return -1;
     }
+
+    public double add(double first, double second){
+        return first + second;
+    }
+
+
 
 }
